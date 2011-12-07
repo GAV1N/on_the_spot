@@ -63,6 +63,7 @@ module OnTheSpot
       html_options[:'data-callback']    = options[:callback]
       html_options[:'data-onblur']      = options[:onblur] if options[:onblur] && ['cancel','submit', 'ignore'].include?(options[:onblur])
       html_options[:'data-loadurl']     = options[:loadurl] unless options[:loadurl].nil?
+      html_options[:'data-raw-value']   = options[:raw_value] if options[:raw_value].present?
         
       content_tag("span", html_options) do
         if options[:display_text]

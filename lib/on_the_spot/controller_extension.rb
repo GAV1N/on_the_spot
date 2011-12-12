@@ -19,7 +19,7 @@ module OnTheSpot
 
           if is_allowed
             if @object.update_attributes(field => params[:value])
-              display_method = on_the_spot_getter_method_mapping[field] || field
+              display_method = on_the_spot_getter_method_mapping[field.to_sym] || field
               val = @object.send(display_method).to_s
               if select_data.nil?
                 render :text => CGI::escapeHTML(val)
